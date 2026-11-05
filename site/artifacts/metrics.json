@@ -1,0 +1,68 @@
+{
+  "model": "RandomForest",
+  "features": [
+    "url_length",
+    "hostname_length",
+    "path_length",
+    "query_length",
+    "dot_count",
+    "subdomain_count",
+    "hyphen_count",
+    "at_count",
+    "digit_ratio",
+    "letter_ratio",
+    "special_ratio",
+    "has_ip_host",
+    "https_scheme",
+    "https_in_text",
+    "suspicious_token_count",
+    "encoded_char_count",
+    "double_slash_path",
+    "port_present"
+  ],
+  "trees": "omitted from metrics summary",
+  "threshold": 0.5,
+  "seed": 2026,
+  "dataset_id": 967,
+  "rows": 235795,
+  "train_rows": 187562,
+  "test_rows": 48233,
+  "test_metrics": {
+    "roc_auc": 0.9970243784418281,
+    "average_precision": 0.9975795530677077,
+    "precision": 0.9930692592770852,
+    "recall": 0.9694136440518699,
+    "f1": 0.981098880197808,
+    "accuracy": 0.983517508759563
+  },
+  "model_comparison": {
+    "logistic_regression": {
+      "roc_auc": 0.994518557640275,
+      "average_precision": 0.9956278388369323,
+      "precision": 0.9846226862838159,
+      "recall": 0.9747227964668296,
+      "f1": 0.9796477310289465,
+      "accuracy": 0.9821284183028217
+    },
+    "random_forest": {
+      "roc_auc": 0.9970243784418281,
+      "average_precision": 0.9975795530677077,
+      "precision": 0.9930692592770852,
+      "recall": 0.9694136440518699,
+      "f1": 0.981098880197808,
+      "accuracy": 0.983517508759563
+    },
+    "extra_trees": {
+      "roc_auc": 0.9895125124420632,
+      "average_precision": 0.9895802463528807,
+      "precision": 0.9858786073739345,
+      "recall": 0.902039090396542,
+      "f1": 0.9420972569802247,
+      "accuracy": 0.9510708436132937
+    }
+  },
+  "positive_label": "phishing-pattern",
+  "train_domains": 176068,
+  "test_domains": 44018,
+  "domain_overlap": 0
+}

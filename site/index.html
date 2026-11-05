@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#101621">
+  <meta name="description" content="Explore a local-only, open-source machine-learning model that scores URL structure for phishing-like patterns.">
+  <title>URL Sentry — local phishing-pattern lab</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top"><a class="brand" href="#top"><span class="mark">US</span><span>URL Sentry<span class="brand-sub">MODEL LAB</span></span></a><a class="github" href="https://github.com/Krrish-GHub/url-sentry-lab">View source ↗</a></header>
+  <main id="top">
+    <section class="hero">
+      <p class="eyebrow"><span class="pulse"></span> OFFLINE MODEL · NO URL LOOKUPS</p>
+      <h1>A closer look at<br><span>URL risk patterns.</span></h1>
+      <p class="lede">Try a small machine-learning model trained to recognize URL structures seen in a public phishing dataset. Your input stays in this browser.</p>
+      <section class="scanner" aria-labelledby="scan-title">
+        <label id="scan-title" for="url-input">Paste a URL to inspect its structure</label>
+        <div class="input-row"><input id="url-input" type="text" inputmode="url" autocomplete="off" spellcheck="false" placeholder="https://example.com/account" aria-describedby="privacy"><button id="scan-button" type="button">Score URL <span>→</span></button></div>
+        <div class="under-input"><span id="privacy">This page does not visit, submit, or transmit the address.</span><button class="sample" data-sample="https://accounts.google.com/signin">Try a sample</button></div>
+        <div id="result" class="result" hidden aria-live="polite"></div>
+      </section>
+      <div class="hero-foot"><span>18 URL-only features</span><span>↗</span><span>Domain-separated evaluation</span><span>↗</span><span>Static model, no API</span></div>
+    </section>
+    <section class="explain">
+      <div><p class="eyebrow">WHAT IT DOES</p><h2>A model you can inspect,<br>not a black box.</h2></div>
+      <div class="copy"><p>URL Sentry derives lightweight features—such as URL length, punctuation, hostname shape and whether the host is an IP address—then combines small decision trees into a score.</p><p>The model was evaluated on domains held out from training, so the test is less likely to reward remembering the same domain. That still does not tell us how it will perform on new, live threats.</p></div>
+    </section>
+    <section class="stats" id="metrics"><div class="stat-head"><p class="eyebrow">HELD-OUT TEST · GROUPED BY DOMAIN</p><span class="badge">historical dataset</span></div><div class="stat-grid" id="metric-grid"><div class="stat"><b>—</b><span>Loading local model</span></div></div><p class="stat-note" id="metric-note">Metrics are computed from the reproducible training run.</p></section>
+    <section class="caveat"><div class="caveat-icon">i</div><div><h2>A score is not a verdict.</h2><p>This is a portfolio learning demo—not a browser warning, security product, or advice to open a link. A low score cannot prove a URL is safe; attackers change patterns and false positives happen. For a suspicious link, avoid signing in through it and visit the organization’s known website directly.</p></div></section>
+    <footer><span>Made as an explainable ML systems project.</span><span><a href="https://archive.ics.uci.edu/dataset/967/phiusiil+phishing+url+website">Dataset & attribution ↗</a><a href="https://github.com/Krrish-GHub/url-sentry-lab">Code & reproducibility ↗</a></span></footer>
+  </main>
+  <script src="features.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

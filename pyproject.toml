@@ -1,0 +1,23 @@
+[project]
+name = "url-sentry-lab"
+version = "1.0.0"
+description = "A reproducible, offline phishing-URL classification lab and browser demo"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "pandas>=2.1,<4", "scikit-learn>=1.4,<2", "ucimlrepo>=0.0.7,<1"]
+
+[project.scripts]
+url-sentry = "urlsentry.cli:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/urlsentry"]
+
+[dependency-groups]
+dev = ["pytest>=8,<9"]
